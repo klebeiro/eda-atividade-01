@@ -1,4 +1,4 @@
-package org.atividade1.DataStructures.AVLT;
+package org.atividade1.DataStructures.AVLTree;
 
 public interface Tree<T extends Comparable<T>> {
 

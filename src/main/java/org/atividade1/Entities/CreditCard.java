@@ -1,18 +1,13 @@
 package org.atividade1.Entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Generated;
 import lombok.NonNull;
-import org.atividade1.DataStructures.AVLT.AVLTree;
-import org.atividade1.DataStructures.RBT.RedBlackTree;
-
-import java.util.Date;
+import org.atividade1.DataStructures.AVLTree.AVLTree;
 
 @Data
 public class CreditCard {
     @NonNull
-    Integer id;
+    String cardNumber;
     @NonNull
     String ownerName;
     @NonNull

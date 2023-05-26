@@ -22,4 +22,14 @@ public class Order implements Comparable<Order> {
     public int compareTo(Order order) {
         return order.orderCode.compareTo(orderCode);
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderCode='" + orderCode + '\'' +
+                ", client=" + client +
+                ", itemList=" + itemList +
+                ", value=" + value +
+                '}';
+    }
 }

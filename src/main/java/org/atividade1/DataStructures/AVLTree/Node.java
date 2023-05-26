@@ -1,4 +1,4 @@
-package org.atividade1.DataStructures.AVLT;
+package org.atividade1.DataStructures.AVLTree;
 
 import lombok.Data;
 import lombok.NonNull;

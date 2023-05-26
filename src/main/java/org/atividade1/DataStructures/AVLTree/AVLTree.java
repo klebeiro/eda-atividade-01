@@ -1,4 +1,8 @@
-package org.atividade1.DataStructures.AVLT;
+package org.atividade1.DataStructures.AVLTree;
+
+import org.atividade1.Entities.Order;
+
+import java.security.spec.RSAOtherPrimeInfo;
 
 public class AVLTree<T extends Comparable<T>> implements Tree<T>  {
     private Node<T> root;
@@ -60,7 +64,39 @@ public class AVLTree<T extends Comparable<T>> implements Tree<T>  {
     private void traverseInOrder(Node<T> node) {
         if (node != null) {
             traverseInOrder(node.getLeftChild());
-            System.out.println(node);
+            Order order = (Order) node.getData();
+            System.out.println("- Compra #" + order.getOrderCode() + " -");
+            System.out.println("Cliente: " + order.getClient().getFullName());
+            System.out.println("- Produtos comprados -");
+            order.getItemList().forEach(item -> {
+                System.out.println("Item: " + item.getItemName());
+                System.out.println("Preco: R$" + item.getPrice());
+                System.out.println("-------\n");
+            });
+            System.out.println("Valor total: R$" + order.getValue());
+            traverseInOrder(node.getRightChild());
+        }
+    }
+
+    public void traverseAndGetOrder(String orderCode) {
+        traverseAndGetOrder(root, orderCode);
+    }
+
+    private void traverseAndGetOrder(Node<T> node, String orderCode) {
+        if (node != null) {
+            traverseInOrder(node.getLeftChild());
+            Order order = (Order) node.getData();
+            if(order.getOrderCode().equals(orderCode)) {
+                System.out.println("- Compra" + order.getOrderCode() + " -");
+                System.out.println("Cliente: " + order.getClient().getFullName());
+                System.out.println("- Produtos comprados -");
+                order.getItemList().forEach(item -> {
+                    System.out.println("Item: " + item.getItemName());
+                    System.out.println("Preco: R$" + item.getPrice());
+                    System.out.println("-------\n");
+                });
+                System.out.println("Valor total: R$" + order.getValue());
+            }
             traverseInOrder(node.getRightChild());
         }
     }

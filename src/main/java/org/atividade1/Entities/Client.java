@@ -3,7 +3,6 @@ package org.atividade1.Entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NonNull;
-import org.atividade1.DataStructures.RBT.RedBlackTree;
 
 import java.util.List;
 
@@ -17,9 +16,9 @@ public class Client {
     @NonNull
     String address;
     @NonNull
-    List<Integer> registeredCreditCards;
+    List<String> registeredCreditCards;
 
-    public void addRegisteredCreditCards(CreditCard creditCard) {
-        registeredCreditCards.add(creditCard.getId());
+    public void addRegisteredCreditCards(String cardNumber) {
+        registeredCreditCards.add(cardNumber);
     }
 }
